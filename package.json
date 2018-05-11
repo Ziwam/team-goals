@@ -1,8 +1,8 @@
 {
   "name": "teamgoals",
-  "homepage": "https://Ziwam.github.io/teamgoals",
   "version": "0.1.0",
   "private": true,
+  "main": "server.js",
   "dependencies": {
     "express": "^4.16.3",
     "firebase": "^4.13.1",
