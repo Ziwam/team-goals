@@ -9,6 +9,7 @@ import App from './components/App';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import {firebaseApp} from './firebase';
+import './styles/index.css';
 
 const store = createStore(reducer);
 
@@ -26,10 +27,14 @@ firebaseApp.auth().onAuthStateChanged(user => {
 
 ReactDOM.render(
 	<Provider store={store}>
-		<Router path="/" history={browserHistory}>
-			<Route path="/app" component={App}/>
-			<Route path="/signin" component={SignIn}/>
-			<Route path="/signup" component={SignUp}/>
-		</Router>
+		<div>
+			<div className="background1"></div>
+			<div className="background2"></div>
+			<Router path="/" history={browserHistory}>
+				<Route path="/app" component={App}/>
+				<Route path="/signin" component={SignIn}/>
+				<Route path="/signup" component={SignUp}/>
+			</Router>
+		</div>
 	</Provider>, document.getElementById('root')
 )

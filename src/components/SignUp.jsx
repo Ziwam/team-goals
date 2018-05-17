@@ -15,40 +15,36 @@ class SignUp extends Component {
 	}
 
 	signUp() {
-		console.log('this.state', this.state);
 		const {email, password} = this.state;
 		firebaseApp.auth().createUserWithEmailAndPassword(email,password)
 		.catch(error => {
-			console.log('error', error); 
 			this.setState({error})
 		})
 	}
 
 	render() {
 		return (
-			<div className="form-inline">
+			<div className="container">
 				<h2>Sign Up</h2>
-				<div className="form-group">
+				<div className="fields">
 					<input 
 						type="text" 
-						className="form-control" 
 						placeholder="email" 
 						onChange={ev => this.setState({email:ev.target.value})}/>
 					<input 
 						type="password" 
-						className="form-control" 
 						placeholder="password" 
 						onChange={ev => this.setState({password: ev.target.value})}/>
 					<button 
-						className="btn btn-primary" 
+						className="log-btn" 
 						type="button"
 						onClick={()=>this.signUp()}
 					>
 						Sign Up
 					</button>
+					<div className="error">{this.state.error.message}</div>
+					<div className="link"><Link to={'/signin'}>Already a user? Sign In</Link></div>
 				</div>
-				<div>{this.state.error.message}</div>
-				<div><Link to={'/signin'}>Already a user? Sign In</Link></div>
 			</div>
 		);
 	}

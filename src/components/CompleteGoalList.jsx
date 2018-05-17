@@ -21,20 +21,32 @@ class CompleteGoalList extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="list">
 				{
 					this.props.completedGoals.map((completeGoal,index) => {
 						const {title, email} = completeGoal;
 						return (
-							<div key={index}>
-								<strong>{title}</strong> completed by <em>{email}</em>
+							<div key={index} className="item">
+								<div className="head">
+									<div className="email completed">{email}</div>
+									<div className="status completed">complete</div>
+								</div>
+								<div className="task">{title}</div>
 							</div>
 						)
 					})	
 				}
-				<button className="btn btn-primary"
-					onClick={() => this.clearCompleted()}
-				>Clear All</button>
+				{
+					(this.props.completedGoals.length > 0)?
+					(
+						<button className="clear-btn"
+							onClick={() => this.clearCompleted()}
+						>Clear All</button>
+					):
+					(
+						<div></div>
+					)
+				}
 			</div>
 		)
 	}

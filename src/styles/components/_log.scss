@@ -1,0 +1,64 @@
+@import '../helpers/_mixins.scss';
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	margin: auto;
+	padding-top: 25%;
+	
+
+	h2 {
+		background: #282827;
+		margin: auto;
+		border-radius: $bd-radius;
+		box-shadow: $pink-shad;
+		color: #fff;
+		padding: 7px 20px;
+		font-weight: $txt-weight;
+	}
+
+	.fields {
+		display: flex;
+		flex-direction: column;
+		width: 90%;
+		max-width: 350px;
+		margin: 30px auto;
+		background: $grey;
+		box-shadow: $pink-shad;
+		border-radius: $bd-radius;
+		padding: 8px 20px;
+		
+		input {
+			height: 30px;
+			border: 1.5px solid #888;
+			font-family: $font-body;
+			font-size: 10px;
+			width: auto;
+			padding: 5px;
+			color: #777;
+			margin-bottom: 5px;
+			font-weight: $txt-weight;
+		}
+
+		button {
+			margin-left: auto;
+			background: $blue;
+			font-weight: $txt-weight;
+		}
+
+		.error {
+			margin: 5px auto 0;
+			font-size: 13px;
+			color: $danger;
+			font-weight: $txt-weight;
+		}
+
+		.link {
+			margin: 5px auto 0;
+			font-weight: $txt-weight;
+		}
+	}
+
+}

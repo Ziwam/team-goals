@@ -1,0 +1,88 @@
+@import '../helpers/_mixins.scss';
+
+.list {
+	margin-bottom: 50px;
+
+	.item {
+		margin: 30px auto;
+		display: flex;
+		flex-direction: column;
+		width: 90%;
+		max-width: 350px;
+		background: $grey;
+		box-shadow: $pink-shad;
+		border-radius: $bd-radius;
+		padding: 8px 20px;
+
+		.head {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			font-size: 9px;
+
+			.email {
+				font-size: 10px;
+				font-weight: $txt-weight;
+
+				&.incomplete {
+			    	color: $blue;
+			    }
+
+			    &.completed {
+			    	color: #3ABA87;
+			    }
+			}
+
+			.status {
+				display: flex;
+				align-items: center;
+				color: #fff;
+				background: #000;
+			    font-size: 9px;
+			    text-transform: lowercase;
+			    letter-spacing: 1.2px;
+			    height: $form-height;
+			    padding: 0 16px;
+			    border-radius: $bd-radius;
+			    margin-left: auto;
+			    margin-bottom: 5px;
+			    font-weight: $txt-weight;
+
+			    &.incomplete {
+			    	background: $pink;
+			    }
+
+			    &.completed {
+			    	background: $green;
+			    }
+			}
+		}
+
+		.task {
+			background: #fff;
+			height: auto;
+			min-height: 20px;
+			border: 1.5px solid #888;
+			font-family: $font-body;
+			font-size: 10px;
+			width: auto;
+			padding: 5px;
+			color: #777;
+			font-weight: $txt-weight;
+		}
+
+		button {
+			margin-left: auto;
+			margin-top: 5px;
+			background: $green;
+			font-weight: $txt-weight;
+		}
+	}
+
+	.clear-btn {
+		display: block;
+		margin: 30px auto;
+		background: $danger;
+		font-weight: $txt-weight;
+	}
+}

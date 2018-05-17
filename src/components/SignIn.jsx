@@ -15,7 +15,6 @@ class SignIn extends Component {
 	}
 
 	signIn() {
-		console.log('this.state', this.state);
 		const {email, password} = this.state;
 		firebaseApp.auth().signInWithEmailAndPassword(email,password)
 		.catch(error => {
@@ -25,29 +24,27 @@ class SignIn extends Component {
 
 	render() {
 		return (
-			<div className="form-inline">
+			<div className="container">
 				<h2>Sign In</h2>
-				<div className="form-group">
+				<div className="fields">
 					<input 
 						type="text" 
-						className="form-control" 
 						placeholder="email" 
 						onChange={ev => this.setState({email:ev.target.value})}/>
 					<input 
 						type="password" 
-						className="form-control" 
 						placeholder="password" 
 						onChange={ev => this.setState({password: ev.target.value})}/>
 					<button 
-						className="btn btn-primary" 
+						className="log-btn" 
 						type="button"
 						onClick={()=>this.signIn()}
 					>
 						Sign In
 					</button>
+					<div className="error">{this.state.error.message}</div>
+					<div className="link"><Link to={'/signup'}>Sign Up</Link></div>
 				</div>
-				<div>{this.state.error.message}</div>
-				<div><Link to={'/signup'}>Sign Up</Link></div>
 			</div>
 		);
 	}

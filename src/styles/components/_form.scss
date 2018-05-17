@@ -1,0 +1,31 @@
+@import '../helpers/_mixins.scss';
+
+.form {
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	max-width: 350px;
+	margin: 30px auto;
+	background: $grey;
+	box-shadow: $pink-shad;
+	border-radius: $bd-radius;
+	padding: 8px 20px;
+
+	textarea {
+		height: 80px;
+		border: 1.5px solid #888;
+		font-family: $font-body;
+		font-size: 10px;
+		width: auto;
+		padding: 5px;
+		color: #777;
+		font-weight: $txt-weight;
+	}
+
+	button {
+		margin-left: auto;
+		margin-top: 5px;
+		background: $blue;
+		font-weight: $txt-weight;
+	}
+}

@@ -11,30 +11,28 @@ class AddGoal extends Component {
 	}
 
 	AddGoal() {
-		console.log('this', this);
 		const {title} = this.state;
 		const {email} = this.props.user;
 		goalRef.push({email, title});
+		this.setState({title: ''});
 	}
 
 	render() {
 		return (
-			<div className="form-inline">
-				<div className="form-group">
-					<input 
-						type="text" 
-						placeholder="Add a Goal" 
-						className="form-control"
-						onChange= {event => this.setState({title: event.target.value})}
-					/>
-					<button 
-						type="button" 
-						className="btn btn-success"
-						onClick= {() => this.AddGoal()}						
-					>
-					Submit
-					</button>
-				</div>
+			<div className="form">
+				<textarea 
+					placeholder="add a task..."
+					value = {this.state.title}
+					onChange= {event => this.setState({title: event.target.value})}
+				>
+				</textarea>
+				<button 
+					type="button" 
+					className="add-btn"
+					onClick= {() => this.AddGoal()}						
+				>
+				Submit
+				</button>
 			</div>
 		);
 	}

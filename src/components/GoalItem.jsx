@@ -6,21 +6,22 @@ class GoalItem extends Component {
 	completeGoal() {
 		const {email} = this.props.user;
 		const {title, serverKey} = this.props.goal;
-		console.log('email', email,'title',title);
 		goalRef.child(serverKey).remove();
 		completeGoalRef.push({email,title});
-
 	}
 
 
 	render() {
 		const {email, title} = this.props.goal;
 		return (
-			<div>
-				<strong>{title}</strong>
-				<span> submitted by <em>{email}</em></span>
+			<div className="item">
+				<div className="head">
+					<div className="email incomplete">{email}</div>
+					<div className="status incomplete">incomplete</div>
+				</div>
+				<div className="task">{title}</div>
 				<button 
-					className="btn btn-sm btn-primary"
+					className="complete-btn"
 					onClick={()=> this.completeGoal()}
 				>
 				complete
