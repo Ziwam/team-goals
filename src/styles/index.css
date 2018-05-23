@@ -69,7 +69,8 @@ button {
     width: 80%;
     background: linear-gradient(135deg, rgba(0, 116, 122, 0.67) 50%, rgba(0, 117, 152, 0.67) 100%);
     padding: 50px 30px 10px;
-    border-radius: 30px; }
+    border-radius: 30px;
+    font-weight: 100; }
     .App .header .title {
       margin: 0 auto;
       color: #fff;
@@ -216,7 +217,7 @@ button {
   flex-direction: column;
   justify-content: center;
   margin: auto;
-  padding-top: 25%; }
+  padding-top: 20vh; }
   .container h2 {
     background: #282827;
     margin: auto;
