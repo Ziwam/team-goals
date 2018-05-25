@@ -30,11 +30,17 @@ class SignUp extends Component {
 					<input 
 						type="text" 
 						placeholder="email" 
-						onChange={ev => this.setState({email:ev.target.value})}/>
+						onChange={ev => this.setState({email:ev.target.value})}
+						onKeyPress = {ev => {
+							if(ev.key ==='Enter') this.signUp()
+						}}/>
 					<input 
 						type="password" 
 						placeholder="password" 
-						onChange={ev => this.setState({password: ev.target.value})}/>
+						onChange={ev => this.setState({password: ev.target.value})}
+						onKeyPress = {ev => {
+							if(ev.key ==='Enter') this.signUp()
+						}}/>
 					<button 
 						className="log-btn" 
 						type="button"
